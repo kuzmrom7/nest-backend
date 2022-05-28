@@ -11,7 +11,14 @@ export class AdminsService {
     return await this.adminRepository.create(dto);
   }
 
-  async getByEmail(email: string) {
+  async get(id: number) {
+    return await this.adminRepository.findOne({
+      where: { id },
+      attributes: ['id', 'email']
+    });
+  }
+
+  async getByEmail(email: string): Promise<Admin> {
     return await this.adminRepository.findOne({
       where: { email },
       include: { all: true },
