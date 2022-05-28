@@ -14,7 +14,7 @@ export class AdminsService {
   async get(id: number) {
     return await this.adminRepository.findOne({
       where: { id },
-      attributes: ['id', 'email']
+      attributes: ['id', 'email'],
     });
   }
 

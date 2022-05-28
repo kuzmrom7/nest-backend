@@ -4,6 +4,8 @@ import { SequelizeModule } from '@nestjs/sequelize';
 import { AdminsModule } from './admins/admins.module';
 import { AuthModule } from './auth/auth.module';
 import { Admin } from './admins/admins.model';
+import { CategoriesModule } from './categories/categories.module';
+import { Category } from './categories/categories.model';
 
 @Module({
   imports: [
@@ -17,11 +19,12 @@ import { Admin } from './admins/admins.model';
       username: process.env.DATABASE_USERNAME,
       password: process.env.DATABASE_PASSWORD,
       database: process.env.DATABASE_NAME,
-      models: [Admin],
+      models: [Admin, Category],
       autoLoadModels: true,
     }),
     AdminsModule,
     AuthModule,
+    CategoriesModule,
   ],
 })
 export class AppModule {}

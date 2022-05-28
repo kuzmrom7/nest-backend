@@ -4,7 +4,7 @@ import { AdminsService } from './admins.service';
 import { SequelizeModule } from '@nestjs/sequelize';
 import { Admin } from './admins.model';
 import { AuthModule } from '../auth/auth.module';
-import { JwtModule } from "@nestjs/jwt";
+import { JwtModule } from '@nestjs/jwt';
 
 @Module({
   controllers: [AdminsController],

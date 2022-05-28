@@ -1,8 +1,13 @@
 import { Column, DataType, Model, Table } from 'sequelize-typescript';
 import { ApiProperty } from '@nestjs/swagger';
 
-@Table({ tableName: 'admin' })
-export class Admin extends Model<Admin> {
+interface AdminCreationAttrs {
+  email: string;
+  password: string;
+}
+
+@Table({ tableName: 'admins' })
+export class Admin extends Model<Admin, AdminCreationAttrs> {
   @ApiProperty({ example: '1234', description: 'Unique id' })
   @Column({
     type: DataType.INTEGER,
