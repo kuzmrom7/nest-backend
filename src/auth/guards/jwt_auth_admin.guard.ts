@@ -18,8 +18,12 @@ export class JwtAuthAdminGuard implements CanActivate {
       }
 
       const admin = this.jwtService.verify(token);
-      req.admin = admin;
 
+      if (!admin.approved) {
+        throw new UnauthorizedException();
+      }
+
+      req.admin = admin;
       return true;
     } catch (error) {
       throw new UnauthorizedException();
