@@ -16,16 +16,10 @@ export class CategoriesService {
   }
 
   async getAll() {
-    return await this.categoryRepository.findAll({ include: { all: true } });
+    return await this.categoryRepository.findAll();
   }
 
   async getById(id: number) {
-    return await this.categoryRepository.findOne({ where: { id } });
+    return await this.categoryRepository.findOne({ where: { id }, include: { all: true }});
   }
-
-  async getBySlug(slug: string) {
-    return await this.categoryRepository.findOne({ where: { slug } });
-  }
-
-  // todo: delete method
 }

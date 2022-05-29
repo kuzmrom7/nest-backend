@@ -1,5 +1,6 @@
-import { Column, DataType, Model, Table } from 'sequelize-typescript';
+import { Column, DataType, HasMany, Model, Table } from 'sequelize-typescript';
 import { ApiProperty } from '@nestjs/swagger';
+import { Product } from '../products/products.model';
 
 interface CategoryCreationAttrs {
   name: string;
@@ -24,4 +25,7 @@ export class Category extends Model<Category, CategoryCreationAttrs> {
   @ApiProperty({ example: 'all-of-them', description: 'Slug for category' })
   @Column({ type: DataType.STRING, unique: true, allowNull: false })
   slug: string;
+
+  @HasMany(() => Product)
+  products: Product[];
 }

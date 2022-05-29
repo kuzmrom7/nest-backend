@@ -20,7 +20,7 @@ export class CategoriesController {
   @ApiOperation({ summary: 'Get category by id' })
   @ApiResponse({ status: 200, type: Category })
   @Get('/:id')
-  getById(@Param("id") id: number) {
+  getById(@Param('id') id: number) {
     return this.categoriesService.getById(id);
   }
 
@@ -36,7 +36,7 @@ export class CategoriesController {
   @ApiResponse({ status: 200, type: Category })
   @UseGuards(JwtAuthAdminGuard)
   @Put('/:id')
-  update(@Body() dto: CreateCategoryDto, @Param("id") id: number) {
+  update(@Body() dto: CreateCategoryDto, @Param('id') id: number) {
     return this.categoriesService.update(id, dto);
   }
 }

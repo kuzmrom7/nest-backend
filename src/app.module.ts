@@ -6,6 +6,8 @@ import { AuthModule } from './auth/auth.module';
 import { Admin } from './admins/admins.model';
 import { CategoriesModule } from './categories/categories.module';
 import { Category } from './categories/categories.model';
+import { ProductsModule } from './products/products.module';
+import { Product } from './products/products.model';
 
 @Module({
   imports: [
@@ -19,12 +21,13 @@ import { Category } from './categories/categories.model';
       username: process.env.DATABASE_USERNAME,
       password: process.env.DATABASE_PASSWORD,
       database: process.env.DATABASE_NAME,
-      models: [Admin, Category],
+      models: [Admin, Category, Product],
       autoLoadModels: true,
     }),
     AdminsModule,
     AuthModule,
     CategoriesModule,
+    ProductsModule,
   ],
 })
 export class AppModule {}
