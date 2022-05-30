@@ -1,5 +1,13 @@
 ## Description
-Shop backend used nest framework.
+Next.js starter with TypeScript, Jest, Cypress, Eslint for e-commerce. <br/>
+Stack: Nest, Sequelize, PostgresSQL, Swagger. <br/>
+
+**Features:**
+- API documentation
+- Validation body
+- CRUD for categories/products
+- Authorization for admin
+
 ## Installation
 
 ```bash
