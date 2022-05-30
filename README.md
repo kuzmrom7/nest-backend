@@ -1,5 +1,5 @@
 ## Description
-Next.js starter with TypeScript, Jest, Eslint for e-commerce. <br/>
+Nest.js starter with TypeScript, Jest, Eslint for e-commerce. <br/>
 Stack: Nest, Sequelize, PostgresSQL, Swagger. <br/>
 
 **Features:**
